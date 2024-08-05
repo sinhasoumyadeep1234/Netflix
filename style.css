@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins:wght@400;500;600&display=swap');
+
+
+*{
+    margin: 0;padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: black;
+}
+.main{
+    background-image: url("Assets/images/main\ display.jpg");
+    height: 70vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* important */
+    position: relative;
+    background-size: max(1200px,100vw);
+}
+.main .box{
+    height: 70vh;
+    width: 100%;
+    opacity: 0.60;
+    background-color: black;
+    /* important two lines position absolute and top0 makes the overlapping box*/
+    position: absolute;
+    top: 0;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* set max-width and margin auto to make the nav in center */
+    max-width: 60vw;
+    margin: auto;
+    height: 62px;
+}
+
+nav img{
+    height: 200px;
+    width: 130px;
+    /* apply position relative and z-index to make the image top of all other elements like the box div that makes the background darker..this will make the image bright/original color */
+    position: relative;
+    z-index: 10;
+}
+
+/* We have to also pop out the buttons for that apply same positon and z index property as above nav */
+nav button{
+    position: relative;
+    z-index: 10;
+}
+
+.hero{
+    /* we can set widht in % as the parent of it(main div has height/width pre defined) */
+    height: calc(100% - 62px); /*main height-nav height*/
+    font-family: 'Martel Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    /* we want the text on in column direction not in row(in a line) hence flex direction column*/
+    flex-direction: column;
+    /* we also want the text to pop out of the dark box thus positon relative */
+    position: relative;
+    gap: 10px;
+    padding: 0 30px;
+    /* margin-top: -20%; */
+}
+/* > used because immediate spans to be target else all other divs/spans in hero section will also get affected */
+.hero> :nth-child(1){
+    /* first text span */
+    font-weight: 900;
+    font-size: 45px;
+    text-align: center;
+}
+
+.hero> :nth-child(2){
+    /* 2nd text span */
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+}
+
+.hero> :nth-child(3){
+    /* 3rd text span */
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+
+.separation{
+    height: 7px;
+    /* width: 100%; */
+    background-color: #232323;
+    margin-bottom: 20px;
+}
+
+.btn{
+    padding: 3px 8px;
+    font-weight: bold;
+    background-color: white;
+    border:none;
+    cursor: pointer;
+}
+
+.btn-red{
+    background-color: red;
+    color: white;
+}
+.red-btn{
+    background-color: red;
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+}
+.lang-btn{
+    background:transparent;
+    color: white;
+    border: 0.5px solid grey;
+    border-radius: 4px; 
+}
+.btn-red{
+    background-color:red;
+    color: white;
+    /* border: 0.5px solid grey; */
+    border-radius: 4px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.main input{
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    background: transparent;
+    border: 0.1px solid rgb(116, 113, 113);
+    color: white;
+}
+::placeholder{
+    color: white;
+    filter: brightness(80%);
+}
+
+/* 2nd section setting of the video over the tv image is very important*/
+.first{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color:white;
+    gap: 50px;
+}
+
+
+.right-img{
+    position: relative;
+    margin: 13px 0px;
+}
+
+.right-img img{
+    width: 555px;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.right-img video{
+    position: absolute;
+    top: 51px;
+    right: 0;
+    width: 488px;
+}
+
+.left-info{
+    padding: 34px 0;
+    text-align: center;
+}
+
+.first > div :first-child{
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+.first > div :nth-child(2){
+    font-size: 20px;
+    font-weight: 400;
+}
+.first > div :nth-child(3){
+    font-size: 20px;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1300px) {
+    .first{
+        flex-wrap: wrap;
+    }
+}
+
+
+
+
+.faq{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    color:white;
+    text-align: center;
+}
+
+.faq-heading{
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.faqBox{
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    text-align: left;
+    margin: 5px auto;
+    background-color: #2D2D2D;
+    padding: 15px;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+}
+.faqBox:hover{
+    background-color: #414141;
+}
+.faqBox svg{
+    filter: invert(1);
+}
+
+.right-img2{
+    position: relative;
+    margin: 13px 0px;
+}
+.right-img2 img{
+    width: 530px;
+    position: relative;
+    z-index: 10;
+}
+.right-img2 video{
+    position: absolute;
+    top: 51px;
+    right: 100px;
+    width: 334px;
+}
+
+.input2{
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    background: transparent;
+    border: 0.1px solid rgb(116, 113, 113);
+    color: white;
+}
+::placeholder{
+    color: white;
+    filter: brightness(80%);
+}
+
+.Questions{
+    margin: auto;
+    width: 72vw;
+    font-size: 14px;
+    color: #B3B3B3;
+    font-weight:lighter;
+    margin-bottom: 25px;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    /* background-color: red; */
+    margin: auto;
+    width: 72vw;
+    font-size: 14px;
+}
+
+.footer-item{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.footer-item a{
+    color: #B3B3B3;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1300px) {
+    footer{
+        grid-template-columns: 1fr 1fr;
+    }
+    nav{
+        max-width: 90vw;
+    }
+}
+
+@media screen and (max-width: 510px){
+    .hero> :nth-child(1){
+        /* first text span */
+        font-weight: 500;
+        font-size: 25px;
+        text-align: center;
+    }
+    
+    .hero> :nth-child(2){
+        /* 2nd text span */
+        font-weight: 300;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .hero> :nth-child(3){
+        /* 3rd text span */
+        font-weight: 200;
+        font-size: 15px;
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width: 540px){
+    .search{
+        flex-direction: column;
+    }
+    .main input{
+        padding: 0px 24px;
+        font-size: 12px;
+    }
+    .red-btn{
+        padding: 0px 24px;
+        font-size: 10px;
+    }
+}
